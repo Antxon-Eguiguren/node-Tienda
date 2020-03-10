@@ -1,0 +1,21 @@
+<div class="container">
+    <h1>Listado de Productos</h1>
+    <table class="table table-dark">
+        <thead class="thead-light">
+            <tr>
+                <th>Nombre</th>
+                <th>Departamento</th>
+                <th>Precio</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        {{#each arrProductos as |prod|}}
+        <tr>
+            <td>{{prod.nombre}}</td>
+            <td>{{prod.departamento}}</td>
+            <td>{{prod.precio}}</td>
+            <td>{{prod.activo}}</td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
