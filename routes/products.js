@@ -18,8 +18,7 @@ router.get('/new', (req, res) => {
 
 // POST http://localhost:3000/products/create
 router.post('/create', (req, res) => {
-    console.log(req.body);
-    if (req.body.activo === 'on') req.body.activo = true
+    if (req.body.activo === 'true') req.body.activo = true
     else req.body.activo = false;
     Producto.create(req.body)
         .then(res.redirect('/products'))
