@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Detalle del Producto {{producto.nombre}}</h1>
+    <table class="table table-dark">
+        <thead class="thead-light">
+            <tr>
+                <th>Nombre</th>
+                <th>Departamento</th>
+                <th>Precio</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tr>
+            <td>{{producto.nombre}}</td>
+            <td>{{producto.departamento}}</td>
+            <td>{{producto.precio}}</td>
+            <td>{{producto.activo}}</td>
+        </tr>
+    </table>
+    <a href="/products"><button class="btn btn-primary">Volver</button></a>
+</div>

@@ -57,4 +57,18 @@ router.get('/find', (req, res) => {
     });
 });
 
+// GET http://localhost:3000/test/findfiltrado
+router.get('/findfiltrado', (req, res) => {
+    Producto.find({
+        precio: {
+            $gt: 100,       // greater than
+            $lt: 200        // less than
+        },
+        activo: true
+    }, (err, rows) => {
+        if (err) return res.json({ error: 'Error en la búsqueda de varios productos' });
+        res.json(rows);
+    });
+});
+
 module.exports = router;

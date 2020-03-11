@@ -7,6 +7,9 @@
                 <th>Departamento</th>
                 <th>Precio</th>
                 <th>Estado</th>
+                <th>Detalle Producto</th>
+                <th>Editar Producto</th>
+                <th>Borrar Producto</th>
             </tr>
         </thead>
         {{#each arrProductos as |prod|}}
@@ -15,6 +18,16 @@
             <td>{{prod.departamento}}</td>
             <td>{{prod.precio}}</td>
             <td>{{prod.activo}}</td>
+            <td>
+                <a href="/products/{{prod._id}}"><button class="btn btn-primary">Detalle Producto</button></a>
+            </td>
+            <td>
+                <a href="/products/edit/{{prod._id}}"><button class="btn btn-primary">Editar Producto</button></a>
+            </td>
+            <td>
+                <a href="/products/delete/{{prod._id}}"><button class="btn btn-danger"
+                        onclick="return confirm('¿Estás seguro de borrar el producto?');">Borrar Producto</button></a>
+            </td>
         </tr>
         {{/each}}
     </table>

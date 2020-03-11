@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Editar Producto</h1>
+    <form action="/products/update" method="post">
+        <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" name="nombre" value="{{producto.nombre}}">
+        </div>
+        <div class="form-group">
+            <label for="departamento">Departamento</label>
+            <input type="text" class="form-control" name="departamento" value="{{producto.departamento}}">
+        </div>
+        <div class="form-group">
+            <label for="precio">Precio</label>
+            <input type="number" class="form-control" name="precio" value="{{producto.precio}}">
+        </div>
+
+        <label for=" activo">Activo</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="activo" value="{{producto.activo}}">
+            <label class="form-check-label">True</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="activo" value="{{producto.activo}}">
+            <label class="form-check-label">False</label>
+        </div>
+        <input type="hidden" name="productoId" value="{{producto._id}}">
+        <button type="submit" class="btn btn-primary btn-crear">Editar Producto</button>
+    </form>
+    <a href="/products"><button class="btn btn-primary btn-volver">Volver</button></a>
+</div>
+
+<!-- <input type='checkbox' class="form-control" name="activo" {{#if product.activo}}checked{{/if}}>
