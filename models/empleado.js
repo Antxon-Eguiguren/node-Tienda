@@ -7,7 +7,11 @@ let empleadoSchema = new Schema({
     identificador: String,
     departamento: String,
     edad: Number,
-    activo: Boolean
+    activo: Boolean,
+    // Propiedad para relacionar un empleado con un producto
+    producto: { type: Schema.Types.ObjectId, ref: 'producto' },
+    // Propiedad para relacionar un empleado con N productos
+    productos: [{ type: Schema.Types.ObjectId, ref: 'producto' }]
 });
 
 empleadoSchema.virtual('nombre_completo').get(function () {

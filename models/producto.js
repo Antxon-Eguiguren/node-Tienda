@@ -8,4 +8,8 @@ let productoSchema = new Schema({
     activo: Boolean
 });
 
+productoSchema.statics.activos = function (callback) {
+    this.model('producto').find({ activo: true }, callback);
+}
+
 module.exports = mongoose.model('producto', productoSchema);
